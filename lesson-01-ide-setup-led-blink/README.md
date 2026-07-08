@@ -1,36 +1,44 @@
 # Lesson 1: Arduino IDE Setup & Built-in LED Blink
 
 ## What this lesson covers
+
 Setting up the Arduino IDE from scratch and writing a first simple 
 program to blink the Arduino UNO's built-in LED.
 
 ## Key concepts
 
 **Bare Minimum sketch**
+
 File > Examples > Basics > Bare Minimum gives the simplest code an 
-Arduino needs to compile — same as starting a New Sketch. Every 
+Arduino needs to compile - same as starting a New Sketch. Every 
 sketch has two core functions:
-- `void setup()` — runs once when the program starts
-- `void loop()` — runs repeatedly after setup, forming the main loop
+
+- `void setup()` - runs once when the program starts
+- `void loop()` - runs repeatedly after setup, forming the main loop
 
 **Board and Port selection**
+
 Before uploading any program, you must select the correct **Board** 
 (your specific hardware model) and **Port** (the USB connection to 
-your computer). This matters a lot in practice — I kept mixing this 
+your computer). This matters a lot in practice - I kept mixing this 
 up switching between Arduino and ESP32.
+
 [Arduino's official guide](https://support.arduino.cc/hc/en-us/articles/4406856349970-Select-board-and-port-in-Arduino-IDE)
 
 **Pin 13 and the built-in LED**
+
 The Arduino UNO has an LED built into the board, wired to pin 13. 
 Using `pinMode()` to set pin 13 as an output, and `digitalWrite()` 
 to set it HIGH/LOW, we can turn the LED on and off in code.
 
 **Why delay() matters**
+
 Without a `delay()` between the HIGH and LOW `digitalWrite()` calls, 
-the LED switches too fast for the human eye to perceive — it just 
+the LED switches too fast for the human eye to perceive - it just 
 looks constantly on. The delay is what makes the blinking visible.
 
 ## What I learned / friction points
+
 Make sure to use a **data transfer USB cable**, not a power-only 
-(charging) cable — a charging cable will power the board but the 
+(charging) cable - a charging cable will power the board but the 
 IDE won't be able to upload code to it or detect the port.
